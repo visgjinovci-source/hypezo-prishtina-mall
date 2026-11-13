@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hypezo × Prishtina Mall</title>
+<meta name="description" content="Selected work by Hypezo Creative House, prepared for Prishtina Mall.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* system of the Prishtina Mall pitch deck: lilac page, rounded cards, Anton + Inter, one word per name in a tilted magenta box.
+     layout idea: one dark card per client where a strip of films carries the page; photos sit on a white panel so they read true-colour */
+  --page:#E9E2F5;
+  --purple:#4A1D96;
+  --magenta:#E6007E;
+  --white:#FFFFFF;
+  --ink:#120B22;
+  --mute:#6E6680;
+  --h:"Anton", Impact, "Arial Narrow", sans-serif;
+  --b:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --gap:clamp(10px,1.4vw,18px);
+  --pad:clamp(20px,3.6vw,56px);
+  --r:clamp(20px,2.4vw,32px);
+  --film-h:clamp(420px,62vh,640px);
+  --photo-h:clamp(300px,40vh,440px);
+  color-scheme:light;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--page);scroll-behavior:smooth}
+body{background:var(--page);color:var(--ink);font-family:var(--b);font-size:16px;line-height:1.5;padding:var(--gap);display:grid;gap:var(--gap);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--magenta);outline-offset:3px}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--h);font-weight:400;text-transform:uppercase;line-height:.92;letter-spacing:.005em;text-wrap:balance;overflow-wrap:break-word}
+.box{display:inline-block;background:var(--magenta);color:#fff;padding:0 .16em;border-radius:.12em;transform:rotate(-2deg);line-height:1.02}
+.purple .box{background:#fff;color:var(--magenta)}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.card{border-radius:var(--r);padding:var(--pad);background:var(--white);min-width:0}
+.card.ink{background:var(--ink);color:#fff}
+.card.purple{background:var(--purple);color:#fff}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(22px,3.5vw,40px)}
+.lock{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-family:var(--h);text-transform:uppercase;font-size:clamp(20px,2.4vw,30px);line-height:1}
+.lock .pm{color:var(--purple)}
+.lock .x{color:var(--magenta)}
+.hero h1{font-size:clamp(64px,13vw,210px)}
+.hero-foot{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;align-items:end}
+@media (min-width:980px){.hero-foot{grid-template-columns:minmax(0,1fr) minmax(0,1.5fr)}}
+.hero-foot p{font-size:clamp(17px,1.6vw,20px);line-height:1.45;color:#3d3450;max-width:40ch}
+.index{display:flex;flex-wrap:wrap;gap:8px}
+.index a{background:var(--page);border-radius:999px;padding:9px 15px;font-size:13px;font-weight:600;color:var(--purple);text-decoration:none}
+.index a.tenant{background:var(--purple);color:#fff}
+.index a:hover{background:var(--magenta);color:#fff}
+
+/* case */
+.case{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(22px,3vw,36px)}
+.case-head{display:grid;grid-template-columns:minmax(0,1fr);gap:18px 48px;align-items:end}
+@media (min-width:980px){.case-head{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}}
+.case-head .eyebrow{color:rgba(255,255,255,.55);margin-bottom:12px}
+.case-head .eyebrow b{color:var(--magenta);font-weight:700}
+.case-head h2{font-size:clamp(52px,8vw,124px)}
+.case-head .about{display:grid;gap:18px}
+.case-head .about p{font-size:16px;line-height:1.55;color:rgba(255,255,255,.72);max-width:52ch}
+.stats{display:flex;flex-wrap:wrap;gap:10px 28px}
+.stats div strong{display:block;font-family:var(--h);font-weight:400;font-size:clamp(34px,3.6vw,48px);line-height:1;color:#fff;font-variant-numeric:tabular-nums}
+.stats div span{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+
+/* strips */
+.strip-wrap{position:relative;min-width:0}
+.strip{display:flex;gap:var(--gap);overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:0;padding-bottom:12px;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.25) transparent;overscroll-behavior-x:contain}
+.strip > *{scroll-snap-align:start;flex:none}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:6px}
+.bar .count{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.arrows{display:flex;gap:8px}
+.arrows button{width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(255,255,255,.25);background:transparent;color:#fff;font-size:18px;cursor:pointer}
+.arrows button:hover{border-color:var(--magenta);background:var(--magenta)}
+.arrows button:disabled{opacity:.25;cursor:default;background:transparent;border-color:rgba(255,255,255,.25)}
+
+.vid{position:relative;height:var(--film-h);max-width:86vw;border-radius:18px;overflow:hidden;background:#1f1733;cursor:pointer}
+.vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#1f1733}
+.vid.fit video{object-fit:contain}
+.vid .ctrl{position:absolute;right:12px;bottom:12px;display:flex;gap:8px}
+.vid .ctrl button{width:40px;height:40px;border-radius:50%;border:0;background:rgba(18,11,34,.55);backdrop-filter:blur(8px);display:grid;place-items:center;cursor:pointer}
+.vid .ctrl svg{width:18px;height:18px;fill:#fff}
+.vid .hint{position:absolute;left:12px;bottom:12px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:rgba(18,11,34,.55);backdrop-filter:blur(8px);padding:7px 10px;border-radius:999px;color:#fff;transition:opacity .3s;pointer-events:none}
+.vid.sound .hint{opacity:0}
+
+.photos{background:var(--white);border-radius:calc(var(--r) - 6px);padding:var(--gap)}
+.photos .strip{scrollbar-color:rgba(18,11,34,.2) transparent;padding-bottom:6px}
+.ph{height:var(--photo-h);max-width:80vw;border-radius:12px;overflow:hidden;background:#EDE7F6}
+.ph img{width:100%;height:100%;object-fit:cover}
+.photos .bar .count{color:var(--mute)}
+.photos .arrows button{border-color:rgba(18,11,34,.2);color:var(--ink)}
+.photos .arrows button:hover{border-color:var(--magenta);background:var(--magenta);color:#fff}
+.photos .arrows button:disabled{background:transparent;border-color:rgba(18,11,34,.2);color:var(--ink)}
+
+/* close */
+.close{display:grid;gap:clamp(28px,4vw,48px)}
+.close h2{font-size:clamp(56px,10vw,150px)}
+.people{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:20px}
+.people b{display:block;font-size:19px}
+.people span{font-size:14px;color:rgba(255,255,255,.75)}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.links a{background:#fff;color:var(--purple);border-radius:999px;padding:11px 20px;font-weight:700;font-size:14px;text-decoration:none}
+footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:8px 6px 4px;font-size:12px;color:var(--mute);text-transform:uppercase;letter-spacing:.08em}
+@media (max-width:640px){:root{--film-h:min(520px,64vh);--photo-h:min(340px,46vh)}}
+</style>
+</head>
+<body>
+
+<header class="card hero">
+  <div class="lock"><span>Hypezo Creative House</span><span class="x">×</span><span class="pm">Prishtina Mall</span></div>
+  <h1>Selected <span class="box">work</span></h1>
+  <div class="hero-foot">
+    <p>Films, campaigns and shoots by Hypezo. Five Prishtina Mall tenants already work with us.</p>
+    <nav class="index" id="index" aria-label="Clients"></nav>
+  </div>
+</header>
+
+<main id="cases" style="display:grid;gap:var(--gap)"></main>
+
+<section class="card purple close" id="contact">
+  <h2><span class="box">Contact</span></h2>
+  <div class="people">
+    <div><b>Vis Gjinovci</b><span>Co-founder · Creative Director</span></div>
+    <div><b>Shkamb Vokshi</b><span>Co-founder · Operations Director</span></div>
+  </div>
+  <div class="links">
+    <a href="https://hypezocreative.com" target="_blank" rel="noopener">hypezocreative.com</a>
+    <a href="https://www.instagram.com/hypezocreative/" target="_blank" rel="noopener">@hypezocreative</a>
+  </div>
+</section>
+
+<footer><span>Hypezo Creative House · Prishtina</span><span>Prepared for Prishtina Mall · 2026</span></footer>
+
+<script>
+const DATA = /*DATA*/{"cases": [{"id": "hyperactive", "name": "HyperActive", "box": "Active", "tenant": true, "kind": "Entertainment venue", "text": "Entertainment venue at Prishtina Mall. Since 2024: strategy, daily content, photoshoots and video shoots, monthly ongoing campaigns, launches of new attractions, influencer events, venue branding, Meta ads.", "stats": [["2M+", "reach"], ["3", "attraction launches"]], "films": [{"src": "media/hyperactive-01.mp4", "poster": "media/hyperactive-01.jpg", "r": 0.5625}, {"src": "media/hyperactive-02.mp4", "poster": "media/hyperactive-02.jpg", "r": 0.5625}, {"src": "media/hyperactive-03.mp4", "poster": "media/hyperactive-03.jpg", "r": 0.5625}, {"src": "media/hyperactive-04.mp4", "poster": "media/hyperactive-04.jpg", "r": 0.5625}, {"src": "media/hyperactive-05.mp4", "poster": "media/hyperactive-05.jpg", "r": 0.5571}, {"src": "media/hyperactive-06.mp4", "poster": "media/hyperactive-06.jpg", "r": 0.5625}, {"src": "media/hyperactive-07.mp4", "poster": "media/hyperactive-07.jpg", "r": 0.5625}], "photos": []}, {"id": "mine", "name": "MINË Beauty", "box": "Beauty", "tenant": true, "kind": "Beauty brand", "text": "We run the brand's marketing end to end, from daily social media and campaign production to the online store.", "films": [{"src": "media/mine-04.mp4", "poster": "media/mine-04.jpg", "r": 0.5625}, {"src": "media/mine-05.mp4", "poster": "media/mine-05.jpg", "r": 0.5625}], "photos": [{"src": "media/mine-01.jpg", "r": 0.7407}, {"src": "media/mine-02.jpg", "r": 0.7443}, {"src": "media/mine-03.jpg", "r": 0.695}, {"src": "media/mine-06.jpg", "r": 0.6907}, {"src": "media/mine-07.jpg", "r": 0.6979}, {"src": "media/mine-08.jpg", "r": 0.7057}]}, {"id": "maison", "name": "Maison de Parfum", "box": "Parfum", "tenant": true, "kind": "Perfumery", "text": "Perfumery at Prishtina Mall: ongoing content shoots, feed and campaigns, including a campaign created entirely with AI.", "films": [{"src": "media/maison-01.mp4", "poster": "media/maison-01.jpg", "r": 0.5625}, {"src": "media/maison-02.mp4", "poster": "media/maison-02.jpg", "r": 0.5625}], "photos": [{"src": "media/maison-03.jpg", "r": 0.8}, {"src": "media/maison-04.jpg", "r": 0.8}, {"src": "media/maison-05.jpg", "r": 0.78}, {"src": "media/maison-06.jpg", "r": 0.7429}]}, {"id": "ellie", "name": "Ellie", "box": "Ellie", "tenant": true, "kind": "Wine & coffee bar", "text": "Wine and coffee bar at Prishtina Mall. Monthly social media content with one consistent editorial image, and Halloween campaigns built as editorial stories.", "films": [{"src": "media/ellie-01.mp4", "poster": "media/ellie-01.jpg", "r": 0.5625}], "photos": []}, {"id": "gate", "name": "Gate Club", "box": "Club", "kind": "Nightlife & events", "text": "Nightclub in Prishtina. Every event gets its own visual identity, campaign and promotion.", "films": [{"src": "media/gate-01.mp4", "poster": "media/gate-01.jpg", "r": 0.5625}, {"src": "media/gate-02.mp4", "poster": "media/gate-02.jpg", "r": 0.5625}, {"src": "media/gate-03.mp4", "poster": "media/gate-03.jpg", "r": 0.5625}, {"src": "media/gate-04.mp4", "poster": "media/gate-04.jpg", "r": 0.5625}, {"src": "media/gate-05.mp4", "poster": "media/gate-05.jpg", "r": 0.5625}, {"src": "media/gate-06.mp4", "poster": "media/gate-06.jpg", "r": 0.5625}, {"src": "media/gate-07.mp4", "poster": "media/gate-07.jpg", "r": 0.5625}, {"src": "media/gate-08.mp4", "poster": "media/gate-08.jpg", "r": 0.5625}, {"src": "media/gate-09.mp4", "poster": "media/gate-09.jpg", "r": 0.5625}], "photos": []}, {"id": "kumo", "name": "Kumo", "box": "Kumo", "kind": "Launch campaign", "text": "Matcha brand and coffee shop. Photoshoot, product launch, coffee shop launch, teaser and video campaign.", "stats": [["800K", "profile reach"], ["300K", "video views"], ["1K+", "shares"]], "films": [{"src": "media/kumo-01.mp4", "poster": "media/kumo-01.jpg", "r": 1.3333}, {"src": "media/kumo-02.mp4", "poster": "media/kumo-02.jpg", "r": 0.5625}], "photos": []}, {"id": "afer", "name": "AFËR", "box": "AFËR", "kind": "Fashion", "text": "Fashion brand by Festa Qoqaj.", "films": [{"src": "media/afer-03.mp4", "poster": "media/afer-03.jpg", "r": 1.7772}], "photos": [{"src": "media/afer-01.jpg", "r": 0.6993}, {"src": "media/afer-02.jpg", "r": 0.7036}, {"src": "media/afer-04.jpg", "r": 0.69}, {"src": "media/afer-05.jpg", "r": 0.6914}, {"src": "media/afer-06.jpg", "r": 0.6957}, {"src": "media/afer-07.jpg", "r": 0.6986}, {"src": "media/afer-08.jpg", "r": 0.695}]}, {"id": "kle", "name": "Klé", "box": "Klé", "kind": "Fashion", "text": "Backstage-themed studio campaign with a model and the brand owner, plus social content and VHS reels.", "films": [{"src": "media/kle-01.mp4", "poster": "media/kle-01.jpg", "r": 0.5625}, {"src": "media/kle-11.mp4", "poster": "media/kle-11.jpg", "r": 0.5625}], "photos": [{"src": "media/kle-02.jpg", "r": 0.7307}, {"src": "media/kle-03.jpg", "r": 0.7214}, {"src": "media/kle-04.jpg", "r": 0.725}, {"src": "media/kle-05.jpg", "r": 0.7164}, {"src": "media/kle-06.jpg", "r": 1.3585}, {"src": "media/kle-07.jpg", "r": 0.7257}, {"src": "media/kle-08.jpg", "r": 0.735}, {"src": "media/kle-09.jpg", "r": 0.7329}, {"src": "media/kle-10.jpg", "r": 0.7421}]}, {"id": "dodona", "name": "Dodona Avdiu", "box": "Avdiu", "kind": "Fashion · Miami Edition", "text": "For the launch of the Miami location: identity, creative direction and production, with international faces.", "films": [{"src": "media/dodona-01.mp4", "poster": "media/dodona-01.jpg", "r": 0.6818}], "photos": [{"src": "media/dodona-02.jpg", "r": 0.7421}, {"src": "media/dodona-03.jpg", "r": 0.7421}, {"src": "media/dodona-04.jpg", "r": 0.7471}, {"src": "media/dodona-05.jpg", "r": 0.7429}, {"src": "media/dodona-06.jpg", "r": 0.7429}]}, {"id": "door903", "name": "Door903", "box": "903", "kind": "", "text": "", "films": [{"src": "media/door903-01.mp4", "poster": "media/door903-01.jpg", "r": 0.5625}, {"src": "media/door903-02.mp4", "poster": "media/door903-02.jpg", "r": 0.5625}, {"src": "media/door903-03.mp4", "poster": "media/door903-03.jpg", "r": 0.5625}, {"src": "media/door903-04.mp4", "poster": "media/door903-04.jpg", "r": 0.5625}, {"src": "media/door903-05.mp4", "poster": "media/door903-05.jpg", "r": 1.7772}], "photos": [{"src": "media/door903-06.jpg", "r": 0.7336}, {"src": "media/door903-07.jpg", "r": 0.7514}, {"src": "media/door903-08.jpg", "r": 0.745}, {"src": "media/door903-09.jpg", "r": 0.7536}]}, {"id": "ai", "name": "AI campaigns", "box": "AI", "kind": "Created with AI", "text": "Campaign films created entirely with AI, directed in-house.", "films": [{"src": "media/ai-01.mp4", "poster": "media/ai-01.jpg", "r": 1.7778}, {"src": "media/ai-02.mp4", "poster": "media/ai-02.jpg", "r": 1.7778}], "photos": []}, {"id": "more", "name": "More work", "box": "work", "kind": "Selected films", "text": "", "films": [{"src": "media/more-01.mp4", "poster": "media/more-01.jpg", "r": 0.5625}, {"src": "media/more-02.mp4", "poster": "media/more-02.jpg", "r": 0.5625}, {"src": "media/more-03.mp4", "poster": "media/more-03.jpg", "r": 0.8009}, {"src": "media/more-04.mp4", "poster": "media/more-04.jpg", "r": 0.5625}, {"src": "media/more-05.mp4", "poster": "media/more-05.jpg", "r": 0.5625}], "photos": []}]}/*END*/;
+
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const named = (name, box) => { const i = box ? name.lastIndexOf(box) : -1; return i < 0 ? esc(name) : esc(name.slice(0, i)) + `<span class="box">${esc(box)}</span>` + esc(name.slice(i + box.length)); };
+const ICON = {
+  off:'<svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4zm12.6 3 2.7-2.7-1.4-1.4-2.7 2.7-2.7-2.7-1.4 1.4 2.7 2.7-2.7 2.7 1.4 1.4 2.7-2.7 2.7 2.7 1.4-1.4z"/></svg>',
+  on:'<svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4zm11.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM13 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>',
+  full:'<svg viewBox="0 0 24 24"><path d="M5 5h5v2H7v3H5V5zm9 0h5v5h-2V7h-3V5zM5 14h2v3h3v2H5v-5zm12 3v-3h2v5h-5v-2h3z"/></svg>'
+};
+const film = v => `<div class="vid${v.r > 1.2 ? " fit" : ""}" data-v style="aspect-ratio:${v.r}">
+  <video data-src="${esc(v.src)}" poster="${esc(v.poster)}" muted loop playsinline preload="none"></video>
+  <span class="hint">Tap for sound</span>
+  <div class="ctrl"><button type="button" data-act="sound" aria-label="Sound on">${ICON.off}</button><button type="button" data-act="full" aria-label="Full screen">${ICON.full}</button></div></div>`;
+const photo = (p, alt) => `<div class="ph" style="aspect-ratio:${p.r}"><img src="${esc(p.src)}" alt="${esc(alt)}" loading="lazy"></div>`;
+const arrows = id => `<div class="arrows"><button type="button" data-row="${id}" data-dir="-1" aria-label="Back">←</button><button type="button" data-row="${id}" data-dir="1" aria-label="More">→</button></div>`;
+
+document.getElementById("index").innerHTML = DATA.cases.map(c => `<a href="#${c.id}" class="${c.tenant ? "tenant" : ""}">${esc(c.name)}</a>`).join("");
+
+document.getElementById("cases").innerHTML = DATA.cases.map(c => `
+<section class="card ink case" id="${c.id}">
+  <div class="case-head">
+    <div><p class="eyebrow">${c.tenant ? "<b>●</b> Inside Prishtina Mall · " : ""}${esc(c.kind || "")}</p><h2>${named(c.name, c.box)}</h2></div>
+    <div class="about">${c.text ? `<p>${esc(c.text)}</p>` : ""}${c.stats && c.stats.length ? `<div class="stats">${c.stats.map(s => `<div><strong>${esc(s[0])}</strong><span>${esc(s[1])}</span></div>`).join("")}</div>` : ""}</div>
+  </div>
+  ${c.films.length ? `<div class="strip-wrap"><div class="strip" id="f-${c.id}">${c.films.map(film).join("")}</div>
+    <div class="bar"><span class="count">${c.films.length} ${c.films.length === 1 ? "film" : "films"}</span>${c.films.length > 1 ? arrows("f-" + c.id) : ""}</div></div>` : ""}
+  ${c.photos.length ? `<div class="photos strip-wrap"><div class="strip" id="p-${c.id}">${c.photos.map(p => photo(p, c.name)).join("")}</div>
+    <div class="bar"><span class="count">${c.photos.length} ${c.photos.length === 1 ? "photo" : "photos"}</span>${c.photos.length > 1 ? arrows("p-" + c.id) : ""}</div></div>` : ""}
+</section>`).join("");
+
+/* arrows */
+function syncArrows(row){
+  const max = row.scrollWidth - row.clientWidth - 2;
+  document.querySelectorAll(`[data-row="${row.id}"]`).forEach(b => b.disabled = b.dataset.dir < 0 ? row.scrollLeft <= 2 : row.scrollLeft >= max);
+}
+document.querySelectorAll(".strip").forEach(r => { syncArrows(r); r.addEventListener("scroll", () => syncArrows(r), { passive: true }); });
+addEventListener("resize", () => document.querySelectorAll(".strip").forEach(syncArrows));
+
+/* playback: load and play muted only while on screen; one video with sound at a time */
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const all = [...document.querySelectorAll("[data-v]")];
+function load(v){
+  if (v.src) return;
+  v.addEventListener("error", () => { if (v.dataset.blob) return; v.dataset.blob = 1;
+    fetch(v.dataset.src).then(r => r.blob()).then(b => { v.src = URL.createObjectURL(b); v.play().catch(() => {}); }).catch(() => {}); }, { once: true });
+  v.src = v.dataset.src;
+}
+const io = new IntersectionObserver(es => es.forEach(e => {
+  const v = e.target.querySelector("video");
+  if (e.isIntersecting) { load(v); if (!reduce || !v.muted) v.play().catch(() => {}); }
+  else v.pause();
+}), { threshold: .5 });
+all.forEach(w => io.observe(w));
+function setSound(w, on){
+  const v = w.querySelector("video"); v.muted = !on; w.classList.toggle("sound", on);
+  w.querySelector('[data-act="sound"]').innerHTML = on ? ICON.on : ICON.off;
+  if (on) { load(v); v.play().catch(() => {}); }
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-row]");
+  if (b) { const row = document.getElementById(b.dataset.row); row.scrollBy({ left: Number(b.dataset.dir) * row.clientWidth * .8, behavior: "smooth" }); return; }
+  const w = e.target.closest("[data-v]"); if (!w) return;
+  const v = w.querySelector("video");
+  if (e.target.closest('[data-act="full"]')) {
+    all.forEach(o => o !== w && setSound(o, false)); setSound(w, true);
+    (v.requestFullscreen || v.webkitEnterFullscreen || v.webkitRequestFullscreen || (() => {})).call(v);
+    return;
+  }
+  const on = v.muted;
+  all.forEach(o => o !== w && setSound(o, false));
+  setSound(w, on);
+});
+</script>
+</body>
+</html>
